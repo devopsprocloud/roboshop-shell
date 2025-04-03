@@ -58,12 +58,11 @@ VALIDATE $? "Go to '/app' directory"
 npm install &>> $LOGFILE
 VALIDATE $? "Installing dependecies"
 
-cp /home/ec2-user/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp /home/ec2-user/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 VALIDATE $? "Copying catalogue.service file"
 
 systemctl daemon-reload &>> $LOGFILE
 VALIDATE $? "Reloading Daemon"
-
 
 systemctl enable catalogue &>> $LOGFILE
 VALIDATE $? "Enabling Catalogue"
@@ -71,7 +70,7 @@ VALIDATE $? "Enabling Catalogue"
 systemctl start catalogue &>> $LOGFILE
 VALIDATE $? "Starting Catalogue"
 
-cp /home/ec2-user/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? "Copying Mongo Repo"
 
 dnf install -y mongodb-mongosh &>> $LOGFILE
