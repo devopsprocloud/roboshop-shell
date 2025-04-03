@@ -26,7 +26,6 @@ if [ $ID -ne 0 ]
 then
     echo -e " $R ERROR $N You are not a root user"
     exit 1
-else
 fi
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
