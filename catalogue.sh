@@ -37,8 +37,14 @@ VALIDATE $? "Enabling NodeJS:20"
 dnf install nodejs -y &>> $LOGFILE
 VALIDATE $? "Installing NodeJS:20"
 
-useradd roboshop &>> $LOGFILE
-VALIDATE $? "Creating 'roboshop' user"
+id roboshop &>> $LOGFILE
+if [ $? -ne 0 ]
+then 
+    useradd roboshop &>> $LOGFILE
+    VALIDATE $? "Creating 'roboshop' user"
+else
+    echo -e "roboshop user already exists...$Y SKIPPING $N."
+fi
 
 mkdir -p /app &>> $LOGFILE
 VALIDATE $? "Creating '/app' directory"
