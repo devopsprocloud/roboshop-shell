@@ -29,7 +29,7 @@ then
 fi
 
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash &>> $LOGFILE
-VALIDATE $? "Downloading earlandg script" 
+VALIDATE $? "Downloading earlang script" 
 
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>> $LOGFILE
 VALIDATE $? "Configuring RabbitMQ Repo" 
