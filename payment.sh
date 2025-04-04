@@ -67,7 +67,7 @@ VALIDATE $? "Reloading Daemon"
 systemctl enable payment &>> $LOGFILE
 VALIDATE $? "Enabling Payment"
 
-systemctl start catapaymentlogue &>> $LOGFILE
+systemctl start payment &>> $LOGFILE
 VALIDATE $? "Starting Payment"
 
 
