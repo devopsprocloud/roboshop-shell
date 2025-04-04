@@ -58,8 +58,8 @@ VALIDATE $? "Go to '/app' directory"
 pip3.11 install -r requirements.txt &>> $LOGFILE
 VALIDATE $? "Installing dependencies"
 
-cp /home/ec2-user/payment.service /etc/systemd/system/payment.service &>> $LOGFILE
-VALIDATE $? "Installing dependencies"
+cp /home/ec2-user/robosho-shell/payment.service /etc/systemd/system/payment.service &>> $LOGFILE
+VALIDATE $? "Copying payment.service file"
 
 systemctl daemon-reload &>> $LOGFILE
 VALIDATE $? "Reloading Daemon"
