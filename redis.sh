@@ -32,7 +32,7 @@ dnf install redis -y &>> $LOGFILE
 VALIDATE $? "Installing Redis"
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf &>> $LOGFILE
-VALIDATE $? "Installing Redis"
+VALIDATE $? "Allowing Remote Connection"
 
 systemctl enable redis &>> $LOGFILE
 VALIDATE $? "Enabling Redis"
