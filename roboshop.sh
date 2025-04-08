@@ -36,7 +36,7 @@ do
         PRIVATE_IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[*].Instances[*].PrivateIpAddress' --output text)
     done
 
-    echo -e "$G $i $N: $G $PUBLIC_IP (Public IP) $N, $B $PRIVATE_IP (private IP) $N"
+    echo -e "$G $i $N: $Y $PUBLIC_IP (Public IP) $N, $B $PRIVATE_IP (private IP) $N"
 
     if [ "$i" == "web" ]; then
     RECORD_VALUE=$PUBLIC_IP
