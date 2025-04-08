@@ -1,14 +1,16 @@
 #!/bin/bash
 
-R="\e[31m"
+R="\e[91m"
 G="\e[92m"
-Y="\e[33m"
+Y="\e[93m"
 B="\e[94m"
 N="\e[0m"
 
 AMI_ID=ami-09c813fb71547fc4f
 SG_ID=sg-04b7bd69af45641ab
 ZONE_ID=Z01399073MOD2DFZHUJNU
+
+echo -e "$R Creating EC2 instances and updating Route 53 Records in AWS using Shell-Script$N"
 
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 
