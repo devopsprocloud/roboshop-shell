@@ -3,7 +3,7 @@
 R="\e[91m"
 G="\e[32m"
 Y="\e[33m"
-B="\e[34m"
+B="\e[94m"
 N="\e[0m"
 
 AMI_ID=ami-09c813fb71547fc4f
