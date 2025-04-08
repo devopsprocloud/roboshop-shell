@@ -3,7 +3,7 @@
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
-B="\e[34m"
+B="\e[94m"
 N="\e[0m"
 
 AMI_ID=ami-09c813fb71547fc4f
@@ -36,7 +36,7 @@ do
         PRIVATE_IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[*].Instances[*].PrivateIpAddress' --output text)
     done
 
-    echo -e "$G $i $N: $Y $PUBLIC_IP (Public IP) $N, $B $PRIVATE_IP (private IP) $N"
+    echo -e "$G $i$N: $Y$PUBLIC_IP (Public IP)$N, $B$PRIVATE_IP (private IP)$N"
 
     if [ "$i" == "web" ]; then
     RECORD_VALUE=$PUBLIC_IP
